@@ -4,10 +4,15 @@ import Business from '../Business/Business.js';
 
 class BusinessList extends React.Component {
 
+  
+
   render() {
+    const businesses = this.props.businesses;
     return (
       <div className="BusinessList">
-        {this.props.businesses.map(business => <Business key={business.id} business={business} />)}
+        {businesses.map(businessToRender => {
+          return <Business key={businessToRender.id} business={businessToRender} />;
+        })}
       </div>
     )
   }
